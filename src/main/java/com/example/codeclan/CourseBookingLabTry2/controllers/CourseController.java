@@ -31,7 +31,7 @@ public class CourseController {
             }
         }
         if(name != null){
-            return new ResponseEntity<>(courseRepository.findByBookingsCustomerName(name), HttpStatus.OK);
+            return new ResponseEntity<>(courseRepository.findByBookingsCustomerNameIgnoreCase(name), HttpStatus.OK);
         }
         return new ResponseEntity<>(courseRepository.findAll(), HttpStatus.OK);
     }

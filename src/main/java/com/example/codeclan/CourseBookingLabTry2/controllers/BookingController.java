@@ -25,7 +25,7 @@ public class BookingController {
             return new ResponseEntity(bookingRepository.findByDate(date), HttpStatus.OK);
         }
         if (name != null){
-            return new ResponseEntity(bookingRepository.findCustomersByCourseName(name), HttpStatus.OK);
+            return new ResponseEntity(bookingRepository.findCustomersByCourseNameIgnoreCase(name), HttpStatus.OK);
         }
 
         return new ResponseEntity<>(bookingRepository.findAll(), HttpStatus.OK);

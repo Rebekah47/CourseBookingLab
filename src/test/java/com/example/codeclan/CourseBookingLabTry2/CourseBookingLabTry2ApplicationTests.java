@@ -34,7 +34,7 @@ class CourseBookingLabTry2ApplicationTests {
 
 	@Test
 	public void canGetCustomersByCourseName(){
-		List<Booking> bookingsFound = bookingRepository.findCustomersByCourseName("UX");
+		List<Booking> bookingsFound = bookingRepository.findCustomersByCourseNameIgnoreCase("UX");
 		assertEquals(3, bookingsFound.size());
 	}
 
@@ -52,7 +52,7 @@ class CourseBookingLabTry2ApplicationTests {
 
 	@Test
 	public void canGetCourseByCustomerName(){
-		List<Course> found = courseRepository.findByBookingsCustomerName("John");
+		List<Course> found = courseRepository.findByBookingsCustomerNameIgnoreCase("John");
 		assertEquals(2, found.size());
 	}
 
