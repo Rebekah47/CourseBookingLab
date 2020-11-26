@@ -23,8 +23,8 @@ public class Customer {
     @Column(name="age")
     private int age;
 
-    @JsonIgnoreProperties({"customer"})
-    @OneToMany(mappedBy = "customer")
+    @JsonIgnoreProperties({"customers"})
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 
     public Customer(String name, String town, int age) {
